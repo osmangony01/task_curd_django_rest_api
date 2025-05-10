@@ -12,8 +12,6 @@ class Task(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
 
+
     def __str__(self):
         return self.title
-
-    class Meta:
-        db_table = 'taskCurdApi_task'
