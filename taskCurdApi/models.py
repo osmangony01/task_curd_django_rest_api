@@ -10,6 +10,7 @@ class Task(models.Model):
     status = models.CharField(max_length=30, blank=True, null=True)
     estimated_time = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
     def __str__(self):
