@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'taskCurdApi',
     'rest_framework',
+    'drf_yasg',  # Swagger and ReDoc support
 ]
 
 MIDDLEWARE = [
