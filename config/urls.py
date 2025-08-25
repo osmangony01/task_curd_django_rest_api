@@ -1,5 +1,5 @@
 """
-URL configuration for django_rest_api_project project.
+URL configuration for config project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.urls import re_path
+from django.shortcuts import redirect
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -36,9 +37,9 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    
+    path('', lambda request: redirect('schema-swagger-ui')),  # Redirect root to Swagger UI
     path('admin/', admin.site.urls),
-    path('api/', include('taskCurdApi.urls')),
+    path('api/', include('apps.tasks.urls')),
 
     # Swagger UI
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),

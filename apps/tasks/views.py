@@ -1,12 +1,9 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Task
 from .serializers import TaskSerializer
-from drf_yasg.utils import swagger_auto_schema
-from drf_yasg import openapi
-from .swagger_schemas import *
+from docs.swagger.tasks_schemas import *
 
 
 class TaskCreateView(APIView):
