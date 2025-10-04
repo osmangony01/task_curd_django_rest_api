@@ -1,3 +1,4 @@
 .env
+.env*
 apps/tasks/__pycache__
 
